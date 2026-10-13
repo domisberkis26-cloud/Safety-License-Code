@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domisberkis's Tabs</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 35px 15px;
+  background: linear-gradient(135deg, #172554, #111827);
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #b9c5dc;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 10px;
+}
+
+nav button {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+  padding: 13px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+nav button.active,
+nav button:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px 20px 40px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+h2 {
+  margin-top: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #151e30;
+  border: 1px solid #29364d;
+  padding: 22px;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #60a5fa;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  color: #b5c1d5;
+  line-height: 1.5;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.link:hover {
+  background: #2563eb;
+}
+
+.soon {
+  color: #fbbf24;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #8492aa;
+  border-top: 1px solid #29364d;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>⚡ Domisberkis's Tabs</h1>
+  <p>All my HTML projects in one place.</p>
+</header>
+
+<nav>
+  <button class="active" onclick="openTab('projects', this)">🧩 Projects</button>
+  <button onclick="openTab('links', this)">🔗 HTML Links</button>
+  <button onclick="openTab('coming', this)">🚀 Coming Soon</button>
+</nav>
+
+<main>
+
+  <section id="projects" class="tab-content active">
+    <h2>My Projects</h2>
+    <p>Explore my available HTML applications.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🛡️ CodeShield</h3>
+        <p>A project for checking code and displaying code safety information.</p>
+        <a class="link" href="https://domisberkis26-cloud.github.io/CodeShield/" target="_blank" rel="noopener noreferrer">Open CodeShield</a>
+      </div>
+
+      <div class="card">
+        <h3>🎮 More Projects</h3>
+        <p>More HTML projects will be added here.</p>
+        <span class="soon">Coming Soon</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="links" class="tab-content">
+    <h2>HTML Links</h2>
+    <p>Quick links to my websites and source code.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🌐 CodeShield Website</h3>
+        <p>Visit the published CodeShield application.</p>
+        <a class="link" href="https://domisberkis26-cloud.github.io/CodeShield/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+      </div>
+
+      <div class="card">
+        <h3>💻 GitHub Profile</h3>
+        <p>Explore my repositories and HTML source code.</p>
+        <a class="link" href="https://github.com/Domisberkis" target="_blank" rel="noopener noreferrer">Open GitHub</a>
+      </div>
+
+      <div class="card">
+        <h3>📦 CodeShield Repository</h3>
+        <p>View the CodeShield source code on GitHub.</p>
+        <a class="link" href="https://github.com/domisberkis26-cloud/CodeShield" target="_blank" rel="noopener noreferrer">View Source</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="coming" class="tab-content">
+    <h2>Coming Soon 🚀</h2>
+    <p>These projects are planned for the future.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>✨ New HTML App</h3>
+        <p>A new application is being planned.</p>
+        <span class="soon">COMING SOON</span>
+      </div>
+
+      <div class="card">
+        <h3>🧪 Web Tools</h3>
+        <p>More useful tools and experiments are coming.</p>
+        <span class="soon">COMING SOON</span>
+      </div>
+
+      <div class="card">
+        <h3>🎮 Mini Games</h3>
+        <p>Browser games may be added in the future.</p>
+        <span class="soon">COMING SOON</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Domisberkis · Domisberkis's Tabs
+</footer>
+
+<script>
+function openTab(tabId, button) {
+  document.querySelectorAll('.tab-content').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  document.querySelectorAll('nav button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  document.getElementById(tabId).classList.add('active');
+  button.classList.add('active');
+}
+</script>
+
+</body>
+</html>
